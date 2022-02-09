@@ -11,5 +11,3 @@ Odoo modules for Turkey
 * Eklenecek modüller için genel kurallara https://github.com/OCA/maintainer-tools/blob/master/CONTRIBUTING.md adresinden erişebilirsiniz.
 * https://github.com/odoo-turkey/l10n-turkey adresinden github depomuza ulaşabilir github üzerinden projemize katkıda bulunabilirsiniz.
 * Modülleri geliştirirken [OCA tarafından hazırlanan kalite kontrol programları](https://github.com/OCA/maintainer-quality-tools) ile kalite kontrol işinizi kolaylaştırabilirsiniz.
-* Türkçe çevirilere katkıda bulunmak için https://www.transifex.com/ a üye olabilirsiniz.
-* 
