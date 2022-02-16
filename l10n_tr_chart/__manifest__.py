@@ -10,10 +10,10 @@
     "depends": ["account"],
     'data': [
         'data/chart_data.xml',
-        'data/chart_template_data.xml',
         'data/account.group.csv',
         'data/account_tag.xml',
         'data/account.account.template.csv',
+        'data/chart_template_data.xml',
         'data/chart_template.xml',
         'data/fiscal_position_template_data.xml',
     ],

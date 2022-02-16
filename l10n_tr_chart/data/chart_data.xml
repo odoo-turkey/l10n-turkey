@@ -3,9 +3,9 @@
 
     <record id="tr_chart_template" model="account.chart.template">
         <field name="name">Türkiye Hesap Planı</field>
-        <field name="bank_account_code_prefix">102</field>
-        <field name="cash_account_code_prefix">100</field>
-        <field name="transfer_account_code_prefix">103</field>
+        <field name="bank_account_code_prefix">102.</field>
+        <field name="cash_account_code_prefix">100.</field>
+        <field name="transfer_account_code_prefix">103.</field>
         <field name="code_digits">3</field>
         <field name="currency_id" ref="base.TRY"/>
     </record>
