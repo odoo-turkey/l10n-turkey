@@ -1,3 +1,1 @@
-
-
-from . import wizard_import_script
+from . import wizard_address_import
