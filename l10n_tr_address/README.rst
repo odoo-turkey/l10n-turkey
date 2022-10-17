@@ -18,6 +18,13 @@ Bu modül:
 * İlçe, semt ve mahalle alanlarını ekler.
 * PTT tarafından sunulan excel formatındaki mahalle verisini içeri aktaran bir sihirbaz içerir. (https://postakodu.ptt.gov.tr/Dosyalar/pk_list.zip)
 
+Notlar:
+
+* Odoo içerisinde varsayılan olarak gelen l10n_tr modülündeki "Afyon, İçel, K.maraş" illerinin düzeltilmesi gerekmektedir.
+* Afyon -> Afyonkarahisar
+* İçel -> Mersin
+* K.maraş -> Kahramanmaraş
+
 Bağımlılıklar
 ~~~~~~~
 
