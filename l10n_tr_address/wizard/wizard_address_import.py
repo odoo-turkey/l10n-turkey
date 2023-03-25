@@ -105,7 +105,6 @@ class WizardAddressImport(models.TransientModel):
                 self.env.cr.commit()
             except Exception as e:
                 _logger.error("Import Error !!! %s " % (str(e)))
-                exit()
 
     # def turkish_title(self, word):
     #     """
