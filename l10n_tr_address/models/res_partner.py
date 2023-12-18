@@ -60,45 +60,12 @@ class ResPartner(models.Model):
 
     @api.model
     def _display_address(self, without_company=False):
-
         """
-        The purpose of this function is to build and return an address formatted accordingly to the
-        standards of the country where it belongs.
-
-        :param address: browse record of the res.partner to format
-        :returns: the address formatted in a display that fit its country habits (or the default ones
-            if not country is specified)
-        :rtype: string
+        Inherited to add the district and neighbourhood to the address format.
         """
-
-        # get the information that will be injected into the display format
-        # get the address format
-        # super(ResPartner, self)._display_address(without_company=without_company)
-        address_format = (
-            self.country_id.address_format
-            or "%(street)s\n%(street2)s\n%(city)s %(state_code)s %(zip)s\n%(country_name)s"
-        )
-        args = {
-            "state_code": self.state_id.code or "",
-            "state_name": self.state_id.name or "",
-            "country_code": self.country_id.code or "",
-            "country_name": self.country_id.name or "",
-            "company_name": self.parent_name or "",
-            "neighbourhood_name": self.neighbour_id.name or "",
-            "region_name": self.region_id.name or "",
-            "district_name": self.district_id.name or "",
-            "phone": self.phone or "",
-            # 'fax': self.fax or ''
-        }
-
-        for field in self._address_fields():
-            args[field] = getattr(self, field) or ""
-        if without_company:
-            args["company_name"] = ""
-        elif self.parent_id:
-            address_format = "%(company_name)s\n" + address_format
-        if args["region_name"] == args["district_name"]:
-            args["region_name"] = ""
-        display_address = address_format % args
-        display_address = re.sub("\n[\s,]*\n+", "\n", display_address.strip())
-        return re.sub(r"^\s+", "", display_address, flags=re.M)
+        address_format, args = self._prepare_display_address(without_company)
+        tr_address_fields = ["district_id", "region_id", "neighbour_id"]
+        for field in tr_address_fields:
+            if field in args and args[field]:
+                args[field] = args[field].name or ""
+        return address_format % args
