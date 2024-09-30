@@ -14,7 +14,6 @@ class wizard_import_script(models.TransientModel):
 
     xls_file = fields.Binary("Upload XLS File")
 
-    @api.multi
     def import_excel(self): #TODO: bu fonksiyon biraz yavas calisiyor daha iyisi yapilabilir
 
         fp = tempfile.NamedTemporaryFile(suffix=".xlsx")

@@ -54,7 +54,6 @@ class ResPartner(models.Model):
                        )._address_fields()
         return fields + ['district_id','neighbour_id','region_id']
 
-    @api.multi
     def _display_address(self,  without_company=False, context=None):
 
         '''
